@@ -1,33 +1,31 @@
 
-/**
- * Write a description of class Main here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
+import java.util.Scanner;
 public class Main
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Main
-     */
-    public Main()
-    {
-        // initialise instance variables
-        x = 0;
+    public static void main (String [] args) {
+         System.out.println("Pick a number between 1 and 50: ");
+         
+         Scanner game = new Scanner(System.in);
+         int n;
+         int guess = game.nextInt();
+         n = (int) (Math.random()*50 + 1);
+         int tries = 0;
+         
+         while (guess != n) { tries++;
+        if(guess < n){
+            System.out.println("Your guess is too small. Guess again!");
+            guess = game.nextInt();
+             }
+        if (guess > n){
+            System.out.println("Your guess is too large. Guess again!");
+            guess = game.nextInt();
+             }
+        if (guess == n){
+            System.out.println("Your guess is correct!");
+            break;
+            }
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
+    System.out.println("You guessed " + tries + " times.");
 }
+}
+
