@@ -11,7 +11,8 @@ public class Main
          n = (int) (Math.random()*50 + 1);
          int tries = 0;
          
-         while (guess != n) { tries++;
+         while (guess != n) { 
+             tries++;
         if(guess < n){
             System.out.println("Your guess is too small. Guess again!");
             guess = game.nextInt();
